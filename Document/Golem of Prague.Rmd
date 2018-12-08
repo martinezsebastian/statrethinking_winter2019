@@ -1,0 +1,165 @@
+---
+title: "Golem of Prague"
+author: "Sebastian Martinez"
+date: "12/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load library
+library(rstan)
+
+# Load parallel
+options(mc.cores = parallel::detectCores())
+
+# Save pre-compiled Stan
+rstan_options(auto_write = TRUE)
+
+# Loading Rethinking Statistics:
+if(!require(coda)) install.packages("coda",repos = "http://cran.us.r-project.org")
+library("coda")
+
+if(!require(mvtnorm)) install.packages("mvtnorm",repos = "http://cran.us.r-project.org")
+library("mvtnorm")
+
+if(!require(devtools)) install.packages("devtools",repos = "http://cran.us.r-project.org")
+library("devtools")
+
+if(!require(loo)) install.packages("loo",repos = "http://cran.us.r-project.org")
+library("loo")
+
+# devtools::install_github("rmcelreath/rethinking", ref = "Experimental")
+
+```
+
+# Golem of Prague
+## Introduction
+- Most of the statistics we use were designed for simple systems. The questions we are trying to answer nowadays regard much more complex phenomena and behaviour
+- Statistical models are like small robots: they are not clever, they just follow instructions. It's important to keep this in mind when doing science: we need to use the right models to answer the right questions. 
+- We should use 'robots' for the things we are not really good at 
+- Another mythology for robot is a Golem: a clay figure brought to life by magic. 
+- Most notably: The Golem of Prague. Legend has it, a Rabbi created a Golem to protect the Jews in Prague from persecution. But because the Golem took instructions so literaly, it ended harming people instead of saving them. We need to be careful of the types of models we build so that they do not 'harm' anyone.
+
+| Golem | Model|
+|-------|------|
+|Made of Clay | Made of Silicon|
+|Animated by "truth" | Animated by "truth"|
+|Powerful | Hopefully powerful |
+| Blind to creator's intent | Blind to creator's intent |
+|Easy to misuse| Easy to misuse  |
+|Fictional | Not even false |
+
+- Models are as false as hammers are. They are not. 
+- "Some models are false, but some of them are useful"
+- This course is not about building statisticians: lots of coding, none of the problems we are looking at are solvable analytically.  
+- What we do for a living: being confused, but trying to be less confused every day. 
+
+## Updates to the 2nd Edition
+- Lots of predictive simulation, Causal Inference (DAGs, Colliders, Instrumental Variables), `map` becomes `quap`, `map2stan` replaced by `ulam`, New examples. 
+
+## We should all be against tests
+- Statistical tests are like specialised, pre-made golem procedures. We should be able to make our own golems that fit our needs!
+- Developed in the 20th century
+- Disguised se not golems
+- The concept of falsifying a _null_ model is not sufficient
+- Ultimately, inference is not decision
+
+- Statistical models are not hypothesis
+- Example: 
+
+   $H_0$ Evolution is Neutral. We pass this idea through different methodologies, and we analyse a 'cut' of the data through a statistical model. But what if evolution is not neutral, how do we test that? 
+    We cannot falsify one hypothesis with only one model, so how do we do this properly?
+    The process looks something like this
+
+| Hypothesis | Model | Stastistical test|
+|------------|-------|------------------|
+| H0         | Model 1| Resulting data: test T1: Conclusion 1|
+| H0         | Model 1| Resulting data: test T2: Conclusion 2|
+| H1         | Model 2| Resulting data: test T1: Conclusion 1|
+
+We need to think about these models clearly. 
+
+- Failure of falsification. Karl Popper. 
+... Evidence requires building several models that are consistent with a theory. With current statistical tests, researchers are not trying to test their research hypothesis, but rather uninteresting hypothesis to show that nothing is going on. 
+... Try to come up with a model that predicts that something is happening, and try to falsify that!
+
+## What (which kinds of models) we are going to build:
+- Bayesian Data Analysis
+The Original Statistics. An extension of ordinary logic. Computationally difficuly (which is why it was not developed earlier, that and the frequentist approach).  
+
+In one sentence: Count all the ways data can happen according to your assumotions. Assumptions with more ways that are consistent with data are more plausible. 
+- Make some assumptions of what the world can be like, causally, and generate observations with this in mind. 
+
+- Multilevel Modelling
+Models with multiple levels of uncertainty. Models within Models. There is a natural bayesian strategy to think about these models. 
+- Model Comparison
+Instead of falsifying null models, we compare models that we consider to be meaningful. It has a couple of problems: overfitting (make a model love your data but not the world), and it cannot really do causal inference. 
+
+## Bayesian Data Analysis!
+- Christopher Columbus' mistake
+Columbus made the trip thinking that the world was smaller than it actually is. When we make a model, we are playing Columbus' game, and hopefully we would not bet our lives on it. 
+Savage (1954): In a *Small World*, Bayesian golems are king and optimal. In the *Large World* there is no guarantee of optimality. As researchers we should worry about both. 
+
+- Garden of Forking Data
+Think of the following experiment:
+There is a bag with four marbles which can be blue or white. We do not know the actual contents of the bag, but we know all of the different possibilities. 
+The bag can have:
+1. White, White, White, White
+2. White, White, White, Blue
+3. White, White, Blue, Blue
+4. White, Blue, Blue, Blue
+5. Blue, Blue, Blue, Blue
+
+We draw with replacement three times, and we observe: Blue, White, Blue. 
+
+Say we start with possibility 2. Out of all the possible ways we could observe a draw, there are only 3 ways it can happen. Let's put all of them in a table. 
+
+| Possible contents | Ways to produce Blue, White, Blue|
+|-------------------|----------------------------------|
+|1. White, White, White, White| 0 |
+|2. White, White, White, Blue| 3 |
+|3. White, White, Blue, Blue| 8 | 
+|4. White, Blue, Blue, Blue| 9 |
+5. Blue, Blue, Blue, Blue| 0 |
+
+A Bayesian model, regardless of how complicated, is just basically counting marbles. The trick about Bayesian statistics is that it can be updated with more information (information about the bags, or another draw). In this sense, probability theory is just a set of shortcuts to count all the ways something can happen. 
+
+McElreath: Plausibility is probaility: the set of non-negative ways to sum up to one. In other words, the relative number of ways each of these conjectures could be true conditional on the evidence. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
