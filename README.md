@@ -9,7 +9,7 @@ Location: Max Planck Institute for Evolutionary Anthropology, 4th floor seminar 
 
 When: 10am-11am Mondays & Fridays (see calendar below)
 
-Text: Statistical Rethinking, 1st ed and 2nd ed draft chapters <http://xcelab.net/rm/statistical-rethinking/>
+Text: Statistical Rethinking, 1st ed and 2nd ed draft chapters <https://xcelab.net/rm/statistical-rethinking/>
 
 # Materials
 
@@ -25,7 +25,7 @@ The code is all on github: <https://github.com/rmcelreath/rethinking/tree/Experi
 You can also run everything from the RStudio Cloud in your web browser. This is up-to-date with rethinking 1.80 and rstan 2.17.3 (as of 4 Dec 2018): <https://rstudio.cloud/project/56157>
 
 ## Draft chapters
-We'll use draft chapters for the 2nd edition of my book, Statistical Rethinking. If you have the password that I give out in lecture (attend class or watch the lectures), you can download them at this link: <http://xcelab.net/rm/sr2/>.
+We'll use draft chapters for the 2nd edition of my book, Statistical Rethinking. You can download them at this link: <https://xcelab.net/rm/sr2/>. The password is at the end of the 2nd lecture (linked below).
 
 ## Homework and solutions
 I will also post problem sets and solutions here. Check the folders at the top.
@@ -36,33 +36,34 @@ I will add links to slides and videos in the calendar below. The slides will be 
 
 # Calendar & Topical Outline
 
-Week 1:  
-Dec 3: The Golem of Prague <[slides](https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019)> <[video](https://www.youtube.com/watch?v=4WVelCswXo4)>  
-Dec 7: Garden of Forking Data <[slides](https://speakerdeck.com/rmcelreath/l02-statistical-rethinking-winter-2019)> <[video](https://www.youtube.com/watch?v=XoVtOAN0htU&list=PLDcUM9US4XdNM4Edgs7weiyIguLSToZRI&index=2)>
+ 
+01-Dec 3: The Golem of Prague <[slides](https://speakerdeck.com/rmcelreath/l01-statistical-rethinking-winter-2019)> <[video](https://www.youtube.com/watch?v=4WVelCswXo4)>  
+02-Dec 7: Garden of Forking Data <[slides](https://speakerdeck.com/rmcelreath/l02-statistical-rethinking-winter-2019)> <[video](https://www.youtube.com/watch?v=XoVtOAN0htU&list=PLDcUM9US4XdNM4Edgs7weiyIguLSToZRI&index=2)>
 
-Dec 10: Geocentric Models <[slides](https://speakerdeck.com/rmcelreath/l03-statistical-rethinking-winter-2019)> <[video](https://youtu.be/h5aPo5wXN8E)>  
-Dec 14: Wiggly Orbits  
+03-Dec 10: Geocentric Models <[slides](https://speakerdeck.com/rmcelreath/l03-statistical-rethinking-winter-2019)> <[video](https://youtu.be/h5aPo5wXN8E)>  
+04-Dec 14: Wiggly Orbits <[slides](https://speakerdeck.com/rmcelreath/l04-statistical-rethinking-winter-2019)> <[video](https://youtu.be/ENxTrFf9a7c)>  
 
-Jan 7/11:
-Spurious Waffles & Causal Terror (Regression 2)
+05-Jan 7: Spurious Waffles <[slides](https://speakerdeck.com/rmcelreath/l05-statistical-rethinking-winter-2019)> <[video](https://www.youtube.com/watch?v=e0tO64mtYMU&index=5&list=PLDcUM9US4XdNM4Edgs7weiyIguLSToZRI)>  
+06-Jan 11: Haunted DAG <[slides](https://speakerdeck.com/rmcelreath/l06-statistical-rethinking-winter-2019)> <[video](https://youtu.be/l_7yIUqWBmE)>  
 
-Jan 14/18:
-Ulysses Compass (Overfitting and information criteria)
+07-Jan 14: Ulysses' Compass <[slides](https://speakerdeck.com/rmcelreath/l07-statistical-rethinking-winter-2019)> <[video](https://youtu.be/0Jc6Kgw5qc0)>  
+08-Jan 18: Model Comparison <[slides](https://speakerdeck.com/rmcelreath/l08-statistical-rethinking-winter-2019)> <[video](https://youtu.be/gjrsYDJbRh0)>  
 
-Jan 21/25:
-Conditional Manatees (Interactions)
+09-Jan 21: Conditional Manatees <[slides](https://speakerdeck.com/rmcelreath/l09-statistical-rethinking-winter-2019)> <[video](https://youtu.be/QhHfo6-Bx8o)>  
+10-Jan 25: Markov Chain Monte Carlo  
 
-Jan 28/Feb 1:
-Markov chain Monte Carlo / Maximum entropy & GLMs
+11-Jan 28: Maximum entropy & GLMs  
+12-Feb 01: More GLMs  
 
-Feb 4/8:
-Generalized Linear Models
+13-Feb 04: More GLMs  
+14-Feb 08: Models with Memory (Multilevel models 1)  
 
-Feb 11/15:
-Models with Memory (Multilevel models 1)
+15-Feb 11: More multilevel models  
+16-Feb 15: Adventures in Covariance  
 
-Feb 18/22:
-Adventures in Covariance (Multilevel models 2)
+17-Feb 18: Gaussian processes  
+18-Feb 22: Instruments and front doors  
 
-Feb 25/Mar 1:
-Missing Values & Measurement Error / Generalized Linear Madness (models beyond the GLM(M) framework)
+19-Feb 25: Missing Values and Measurement Error  
+20-Mar 01: Generalized Linear Madness (models beyond the GLM(M) framework)  
+
